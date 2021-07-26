@@ -19,7 +19,7 @@ export default function Activities() {
     "Self Care",
     "Social",
     "Work",
-  ];
+  ]; 
   const time = useRef(null);
   const date = useRef(null);
   const [activities, setActivities] = useState([]);

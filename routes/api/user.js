@@ -35,17 +35,20 @@ router.get('/:id', async (req, res) => {
 });
 
 
-router.get('/:id', (req, res) => {
-  User.findById(
-    req.params.id,
-    { new: true, runValidators: true }
-  )
-    .then((dbAdulting) => {
-      res.json(dbAdulting);
-    })
-    .catch((err) => {
-      res.json(err);
-    });
+router.get('/:id', async (req, res) => {
+  //find 1 product
+  try {
+    const allUserData = await User.findOne(req.params.id);
+
+    if (!allUserData) {
+      res.status(404).json({ message: 'No User found with that id!' });
+      return;
+    }
+
+    res.status(200).json(allColorData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 
 

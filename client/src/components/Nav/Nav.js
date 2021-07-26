@@ -23,7 +23,7 @@ function Nav() {
   return (
     <nav>
       <div className="#69f0ae green accent-2 nav-wrapper">
-        <a href="/Home" className="brand-logo">
+        <a href="/login" className="brand-logo">
           ADULTING
         </a>
         <a href="/Home" data-target="mobile-demo" className="sidenav-trigger">
@@ -34,7 +34,7 @@ function Nav() {
             <a href="/AllActivities">Activity Log</a>
           </li>
           <li>
-            <a onClick={handleSubmit}>Log Out</a>
+            <a href="/" onClick={handleSubmit}>Log Out</a>
           </li>
         </ul>
       </div>
